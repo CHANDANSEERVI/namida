@@ -88,6 +88,7 @@ import 'package:namida/ui/dialogs/general_popup_dialog.dart';
 import 'package:namida/ui/pages/onboarding.dart';
 import 'package:namida/ui/pages/party_page.dart';
 import 'package:namida/ui/widgets/animated_widgets.dart';
+import 'package:namida/ui/widgets/greeting_splash.dart';
 import 'package:namida/ui/widgets/custom_widgets.dart';
 import 'package:namida/ui/widgets/effects/effects.dart';
 import 'package:namida/ui/widgets/library/track_tile.dart';
@@ -756,7 +757,7 @@ class _NamidaState extends State<Namida> {
     if (shouldShowOnBoarding == null) return const SizedBox();
 
     final shouldAddEdgeAbsorbers = Namida.shouldAddEdgeAbsorbers;
-    final mainPageWrapper = shouldShowOnBoarding ? const FirstRunConfigureScreen() : const MainPageWrapper();
+final mainPageWrapper = GreetingSplash(child: shouldShowOnBoarding ? const FirstRunConfigureScreen() : const MainPageWrapper());
     Widget finalApp = Directionality(
       textDirection: TextDirection.ltr,
       child: ObxO(
