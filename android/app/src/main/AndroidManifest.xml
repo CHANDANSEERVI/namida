@@ -25,7 +25,7 @@
      </intent>
      </queries>
     <application
-        android:label="Namida"
+        android:label="Namida Mod"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:appCategory="audio"
