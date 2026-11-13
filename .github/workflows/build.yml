@@ -6,8 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          submodules: recursive
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -16,6 +14,7 @@ jobs:
         with:
           channel: stable
           cache: true
+      - run: git clone https://github.com/namidaco/namida-translations/ assets/language
       - run: flutter pub get
       - run: flutter build apk --release --target-platform android-arm64
       - uses: actions/upload-artifact@v4
